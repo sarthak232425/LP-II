@@ -1,0 +1,18 @@
+/*
+W1: Develop a responsive product catalog webpage using HTML, CSS, and JavaScript. The webpage should display products in a table format with images and implement pagination if there are more than 10 products.
+*/
+body { font-family: sans-serif; container-type: inline-size; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 8px 12px; border: 1px solid #ddd; text-align: left; }
+img { max-width: 100px; height: auto; }
+.pagination { padding: 10px 0; text-align: center; }
+.pagination button { padding: 5px 10px; margin: 0 2px; cursor: pointer; }
+.pagination button.active { background-color: #4CAF50; color: white; }
+/* Responsive styles */
+@container (max-width: 600px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute; top: -9999px; left: -9999px; }
+    tr { border: 1px solid #ccc; margin-bottom: 5px; }
+    td { border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%; }
+    td:before { position: absolute; top: 6px; left: 6px; width: 45%; padding-right: 10px; white-space: nowrap; content: attr(data-label); font-weight: bold; }
+}

@@ -1,0 +1,114 @@
+<!--
+W6: Create a responsive web page for College website with top navbar and display toppers data statistics (year wise) in card using Bootstrap.
+*   Title: "Pune Institute of Computer Technology".
+*   Navigation Bar: Bootstrap navbar with links: 'Home', 'Achievements'.
+*   Headings: Welcome to XYZ College, Our Achievements, Year-Wise Toppers.
+*   Toppers' Statistics: Bootstrap card layout (`col-md-4`) for each year's topper details (Name, Department, Percentage, Photo).
+*   Responsive Features: Cards adjust in a grid (`col-md-4`, `col-sm-6`, `col-12`). Navbar collapses into a toggle menu on mobile.
+*   Footer: Includes college address, contact details, and social media links.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pune Institute of Computer Technology</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .topper-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">PICT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#achievements">Achievements</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Welcome Section -->
+        <div class="text-center">
+            <h1>Welcome to Pune Institute of Computer Technology</h1>
+            <p class="lead">A premier institution for technical education.</p>
+        </div>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="mt-5">
+            <h2 class="text-center mb-4">Our Achievements</h2>
+            <h3 class="text-center mb-4">Year-Wise Toppers</h3>
+            <div class="row">
+                <!-- Topper 1 -->
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/200" class="card-img-top topper-img" alt="Topper 2023">
+                        <div class="card-body">
+                            <h5 class="card-title">Riya Sharma (2023)</h5>
+                            <p class="card-text">Department: Computer Engineering</p>
+                            <p class="card-text">Percentage: 98.5%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Topper 2 -->
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/200" class="card-img-top topper-img" alt="Topper 2022">
+                        <div class="card-body">
+                            <h5 class="card-title">Arjun Verma (2022)</h5>
+                            <p class="card-text">Department: Information Technology</p>
+                            <p class="card-text">Percentage: 97.8%</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Topper 3 -->
+                <div class="col-md-4 col-sm-6 col-12 mb-4">
+                    <div class="card h-100">
+                        <img src="https://via.placeholder.com/200" class="card-img-top topper-img" alt="Topper 2021">
+                        <div class="card-body">
+                            <h5 class="card-title">Priya Singh (2021)</h5>
+                            <p class="card-text">Department: Electronics & Telecommunication</p>
+                            <p class="card-text">Percentage: 98.2%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <div class="container">
+            <p>Pune Institute of Computer Technology, Pune, Maharashtra</p>
+            <p>Contact: (123) 456-7890 | Email: contact@pict.edu</p>
+            <p>
+                <a href="#" class="text-white">Facebook</a> |
+                <a href="#" class="text-white">Twitter</a> |
+                <a href="#" class="text-white">LinkedIn</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

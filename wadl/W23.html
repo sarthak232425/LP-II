@@ -1,0 +1,89 @@
+<!--
+W23: Build a mobile website to display student clubs and extracurricular activities at PICT. Each club (e.g., Coding Club, Robotics Club, Dance Club) should have: Name, Description, Achievements, and Static images.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Student Clubs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="clubs-home">
+    <div data-role="header">
+        <h1>PICT Student Clubs</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <p>Explore the vibrant club culture at PICT.</p>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#coding-club">
+                <img src="https://via.placeholder.com/80" alt="Coding Club">
+                <h2>Coding Club</h2>
+                <p>For all programming enthusiasts.</p>
+            </a></li>
+            <li><a href="#robotics-club">
+                <img src="https://via.placeholder.com/80" alt="Robotics Club">
+                <h2>Robotics Club</h2>
+                <p>Build the future, one robot at a time.</p>
+            </a></li>
+            <li><a href="#dance-club">
+                <img src="https://via.placeholder.com/80" alt="Dance Club">
+                <h2>Dance Club</h2>
+                <p>Express yourself through movement.</p>
+            </a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Coding Club Page -->
+<div data-role="page" id="coding-club">
+    <div data-role="header">
+        <a href="#clubs-home" class="ui-btn ui-icon-back ui-btn-icon-notext">Back</a>
+        <h1>Coding Club</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <img src="https://via.placeholder.com/200" alt="Coding Club" style="width:100%;">
+        <h3>Description</h3>
+        <p>The PICT Coding Club is a community of students who are passionate about competitive programming, software development, and all things code.</p>
+        <h3>Achievements</h3>
+        <p>Winners of Smart India Hackathon 2023, finalists in ICPC regionals.</p>
+    </div>
+</div>
+
+<!-- Robotics Club Page -->
+<div data-role="page" id="robotics-club">
+    <div data-role="header">
+        <a href="#clubs-home" class="ui-btn ui-icon-back ui-btn-icon-notext">Back</a>
+        <h1>Robotics Club</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <img src="https://via.placeholder.com/200" alt="Robotics Club" style="width:100%;">
+        <h3>Description</h3>
+        <p>We focus on building autonomous robots for various national and international competitions.</p>
+        <h3>Achievements</h3>
+        <p>First place at Robocon 2022.</p>
+    </div>
+</div>
+
+<!-- Dance Club Page -->
+<div data-role="page" id="dance-club">
+    <div data-role="header">
+        <a href="#clubs-home" class="ui-btn ui-icon-back ui-btn-icon-notext">Back</a>
+        <h1>Dance Club</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <img src="https://via.placeholder.com/200" alt="Dance Club" style="width:100%;">
+        <h3>Description</h3>
+        <p>A place for students to learn and perform various dance forms.</p>
+        <h3>Achievements</h3>
+        <p>Winners of the Inter-College Dance Fest 2023.</p>
+    </div>
+</div>
+
+</body>
+</html>
+
