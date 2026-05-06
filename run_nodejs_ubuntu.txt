@@ -1,0 +1,71 @@
+Here are the steps to set up and run a Node.js project on an Ubuntu system.
+
+### Step 1: Install Node.js and npm using nvm (Node Version Manager)
+
+Using `nvm` is the recommended way to install Node.js because it allows you to easily manage and switch between different Node.js versions.
+
+1.  **Open your terminal.**
+
+2.  **Install nvm:**
+    Run the following command to download and run the nvm installation script.
+    ```bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    ```
+
+3.  **Update your shell configuration:**
+    For the `nvm` command to work, you need to source it in your shell's configuration file (`.bashrc`, `.zshrc`, etc.).
+    ```bash
+    source ~/.bashrc
+    ```
+    To verify, close and reopen your terminal, then run `command -v nvm`. It should output `nvm`.
+
+4.  **Install the latest LTS (Long-Term Support) version of Node.js:**
+    This command installs the most stable version of Node.js, which also includes `npm` (Node Package Manager).
+    ```bash
+    nvm install --lts
+    ```
+
+5.  **Verify the installation:**
+    Check the versions of Node.js and npm.
+    ```bash
+    node -v
+    npm -v
+    ```
+    You should see the version numbers printed in the terminal.
+
+### Step 2: Navigate to Your Project Directory
+
+1.  **Use the `cd` command** to move into the specific project folder you want to run. For example, if your project is in `~/Documents/LP-II/wadl/nodejs/W14`:
+    ```bash
+    cd ~/Documents/LP-II/wadl/nodejs/W14
+    ```
+    *Note: Replace the path with the actual path to your project folder.*
+
+### Step 3: Install Project Dependencies
+
+Your Node.js projects rely on external packages (like `express` and `mongodb`). These are listed in the `package.json` file.
+
+1.  **Run `npm install`** inside your project directory. This command reads the `package.json` file and downloads all the necessary packages into a `node_modules` folder.
+    ```bash
+    npm install
+    ```
+    *Note: You only need to do this once for the parent `wadl/nodejs` directory if all projects share the same `node_modules` folder, or once per project if they have their own `package.json`.*
+
+### Step 4: Run the Node.js Server
+
+1.  **Start the application** using the `node` command, followed by the name of the main JavaScript file (which is `index.js` for your projects).
+    ```bash
+    node index.js
+    ```
+
+2.  You should see a confirmation message in the terminal, such as:
+    `Server listening at http://localhost:3000`
+
+### Step 5: Access the Application in a Browser
+
+1.  **Open your web browser** (like Firefox or Chrome).
+
+2.  **Navigate to the address** shown in the terminal. For most of your projects, this will be:
+    `http://localhost:3000`
+
+You should now see the web page for that specific assignment. To stop the server, go back to the terminal and press `Ctrl + C`.

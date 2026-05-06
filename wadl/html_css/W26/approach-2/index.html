@@ -1,0 +1,70 @@
+<!--
+W26: Develop a static mobile website using mobile jQuery showcasing PICT's B.E. course structure. Each year (FE, SE, TE, BE) should be a collapsible section listing subjects and brief descriptions.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT B.E. Course Structure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="course-structure">
+    <div data-role="header">
+        <h1>PICT B.E. Course Structure</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <p>An overview of the subjects for each year of the Bachelor of Engineering program.</p>
+        
+        <div data-role="collapsibleset" data-content-theme="a" data-iconpos="right">
+            <div data-role="collapsible">
+                <h3>First Year (FE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Engineering Mathematics I:</strong> Foundational calculus and algebra.</li>
+                    <li><strong>Basic Electrical Engineering:</strong> Introduction to circuits and systems.</li>
+                    <li><strong>Programming and Problem Solving:</strong> Fundamentals of programming using C.</li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Second Year (SE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Data Structures and Algorithms:</strong> Core concepts of organizing data.</li>
+                    <li><strong>Computer Organization and Architecture:</strong> Understanding computer hardware.</li>
+                    <li><strong>Digital Electronics and Logic Design:</strong> Basics of digital circuits.</li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Third Year (TE)</h3>
+                <ul data-role="listview">
+                    <li><strong>Database Management Systems:</strong> Theory and application of databases.</li>
+                    <li><strong>Theory of Computation:</strong> Formal languages and automata theory.</li>
+                    <li><strong>Software Engineering:</strong> Principles of software development lifecycle.</li>
+                </ul>
+            </div>
+
+            <div data-role="collapsible">
+                <h3>Fourth Year (BE)</h3>
+                <ul data-role-="listview">
+                    <li><strong>Artificial Intelligence:</strong> Introduction to AI concepts and algorithms.</li>
+                    <li><strong>Cloud Computing:</strong> Fundamentals of cloud platforms and services.</li>
+                    <li><strong>Elective I:</strong> Specialization course.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h4>&copy; 2026 PICT</h4>
+    </div>
+</div>
+
+</body>
+</html>
+
+

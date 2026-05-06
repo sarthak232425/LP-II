@@ -1,0 +1,153 @@
+<!--
+W3: Design a restaurant menu webpage using HTML and CSS, including menu categories, dishes, and pricing.
+*   Content: "ABC Delights - Restaurant Menu".
+*   Welcome to ABC Delights: Restaurant introduction, chef's message, and food quality assurance.
+*   Top dishes: Ranked based on popularity (e.g., 1. Paneer Tikka, 2. Biryani).
+*   Cuisines: Available cuisines (e.g., - Italian, - Indian, - Chinese).
+*   Menu table: Dish Name, Description, Price (INR).
+*   Images: Add suitable images for the Dish.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Delights - Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdfaf6;
+            color: #4a4a4a;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            background: #d4b2a7;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .section {
+            padding: 30px 20px;
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: #c88ea7;
+            border-bottom: 2px solid #d4b2a7;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        ol, ul {
+            padding-left: 20px;
+        }
+        .menu-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .menu-table th, .menu-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .menu-table th {
+            background-color: #d4b2a7;
+            color: white;
+        }
+        .menu-table img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: #4a4a4a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ABC Delights - Restaurant Menu</h1>
+    </header>
+
+    <div class="container">
+        <section id="welcome" class="section">
+            <h2>Welcome to ABC Delights</h2>
+            <p>
+                Welcome to ABC Delights, where culinary craftsmanship meets the finest ingredients. Our chef's message is simple: to provide an unforgettable dining experience with every dish. We guarantee the quality and freshness of our food, prepared with love and passion.
+            </p>
+        </section>
+
+        <section id="top-dishes" class="section">
+            <h2>Top Dishes</h2>
+            <ol>
+                <li>Paneer Tikka</li>
+                <li>Biryani</li>
+            </ol>
+        </section>
+
+        <section id="cuisines" class="section">
+            <h2>Cuisines</h2>
+            <ul>
+                <li>Italian</li>
+                <li>Indian</li>
+                <li>Chinese</li>
+            </ul>
+        </section>
+
+        <section id="menu" class="section">
+            <h2>Our Menu</h2>
+            <table class="menu-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Dish Name</th>
+                        <th>Description</th>
+                        <th>Price (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Paneer Tikka"></td>
+                        <td>Paneer Tikka</td>
+                        <td>Cubes of paneer marinated in spices and grilled in a tandoor.</td>
+                        <td>₹350</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Biryani"></td>
+                        <td>Hyderabadi Biryani</td>
+                        <td>A flavorful rice dish with spices and marinated chicken.</td>
+                        <td>₹450</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://via.placeholder.com/100" alt="Pasta"></td>
+                        <td>Alfredo Pasta</td>
+                        <td>Creamy white sauce pasta with vegetables.</td>
+                        <td>₹400</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ABC Delights. All rights reserved.</p>
+    </footer>
+</body>
+</html>

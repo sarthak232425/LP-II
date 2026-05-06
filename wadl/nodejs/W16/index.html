@@ -1,0 +1,55 @@
+<!--
+W16: Write a program to update student information in a database.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Update Student Information</h2>
+        <form id="update-student-form">
+            <div class="form-group">
+                <label for="studId">Student ID to Update</label>
+                <input type="text" class="form-control" id="studId" name="studId" required>
+            </div>
+            <div class="form-group">
+                <label for="name">New Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="marks">New Marks</label>
+                <input type="number" class="form-control" id="marks" name="marks" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Update Student</button>
+        </form>
+        <div id="response" class="mt-3"></div>
+    </div>
+    <script>
+        document.getElementById('update-student-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('studId').value;
+            const name = document.getElementById('name').value;
+            const marks = document.getElementById('marks').value;
+
+            fetch(`/update-student/${studId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, marks })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerText = data.message;
+            })
+            .catch(err => {
+                document.getElementById('response').innerText = 'Error updating student.';
+                console.error(err);
+            });
+        });
+    </script>
+</body>
+</html>

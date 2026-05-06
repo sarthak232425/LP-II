@@ -1,0 +1,143 @@
+<!--
+W21: Write a program for all CRUD operations on a student database.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Student Management System</h1>
+
+        <!-- Create Form -->
+        <div class="card mb-4">
+            <div class="card-header">Create Student</div>
+            <div class="card-body">
+                <form id="create-form">
+                    <input type="text" id="create-studId" placeholder="Student ID" required class="form-control mb-2">
+                    <input type="text" id="create-name" placeholder="Name" required class="form-control mb-2">
+                    <input type="number" id="create-marks" placeholder="Marks" required class="form-control mb-2">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Read/Display Table -->
+        <div class="card mb-4">
+            <div class="card-header">All Students</div>
+            <div class="card-body">
+                <button id="refresh-btn" class="btn btn-secondary mb-2">Refresh List</button>
+                <table class="table table-striped">
+                    <thead>
+                        <tr><th>ID</th><th>Name</th><th>Marks</th></tr>
+                    </thead>
+                    <tbody id="students-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Update Form -->
+        <div class="card mb-4">
+            <div class="card-header">Update Student</div>
+            <div class="card-body">
+                <form id="update-form">
+                    <input type="text" id="update-studId" placeholder="Student ID to Update" required class="form-control mb-2">
+                    <input type="text" id="update-name" placeholder="New Name" required class="form-control mb-2">
+                    <input type="number" id="update-marks" placeholder="New Marks" required class="form-control mb-2">
+                    <button type="submit" class="btn btn-warning">Update</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Delete Form -->
+        <div class="card">
+            <div class="card-header">Delete Student</div>
+            <div class="card-body">
+                <form id="delete-form">
+                    <input type="text" id="delete-studId" placeholder="Student ID to Delete" required class="form-control mb-2">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="response" class="mt-3"></div>
+    </div>
+
+    <script>
+        const apiUrl = ''; // Base URL is the same as the frontend
+
+        // Fetch and display all students
+        function getStudents() {
+            fetch(`${apiUrl}/students`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.getElementById('students-tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(student => {
+                        tbody.innerHTML += `<tr><td>${student.studId}</td><td>${student.name}</td><td>${student.marks}</td></tr>`;
+                    });
+                });
+        }
+
+        // Create
+        document.getElementById('create-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('create-studId').value;
+            const name = document.getElementById('create-name').value;
+            const marks = document.getElementById('create-marks').value;
+
+            fetch(`${apiUrl}/add-student`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ studId, name, marks })
+            })
+            .then(res => res.json()).then(data => {
+                document.getElementById('response').innerText = data.message;
+                getStudents();
+            });
+        });
+
+        // Update
+        document.getElementById('update-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('update-studId').value;
+            const name = document.getElementById('update-name').value;
+            const marks = document.getElementById('update-marks').value;
+
+            fetch(`${apiUrl}/update-student/${studId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, marks })
+            })
+            .then(res => res.json()).then(data => {
+                document.getElementById('response').innerText = data.message;
+                getStudents();
+            });
+        });
+
+        // Delete
+        document.getElementById('delete-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('delete-studId').value;
+
+            fetch(`${apiUrl}/delete-student/${studId}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json()).then(data => {
+                document.getElementById('response').innerText = data.message;
+                getStudents();
+            });
+        });
+        
+        // Refresh button
+        document.getElementById('refresh-btn').addEventListener('click', getStudents);
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', getStudents);
+    </script>
+</body>
+</html>

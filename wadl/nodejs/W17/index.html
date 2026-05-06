@@ -1,0 +1,43 @@
+<!--
+W17: Write a program to delete student information from a database.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Delete Student</h2>
+        <form id="delete-student-form">
+            <div class="form-group">
+                <label for="studId">Student ID to Delete</label>
+                <input type="text" class="form-control" id="studId" name="studId" required>
+            </div>
+            <button type="submit" class="btn btn-danger">Delete Student</button>
+        </form>
+        <div id="response" class="mt-3"></div>
+    </div>
+    <script>
+        document.getElementById('delete-student-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('studId').value;
+
+            fetch(`/delete-student/${studId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerText = data.message;
+            })
+            .catch(err => {
+                document.getElementById('response').innerText = 'Error deleting student.';
+                console.error(err);
+            });
+        });
+    </script>
+</body>
+</html>

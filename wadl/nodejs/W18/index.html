@@ -1,0 +1,51 @@
+<!--
+W18: Write a program to search for specific student information in a database.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Search for a Student</h2>
+        <form id="search-student-form">
+            <div class="form-group">
+                <label for="studId">Student ID to Search</label>
+                <input type="text" class="form-control" id="studId" name="studId" required>
+            </div>
+            <button type="submit" class="btn btn-info">Search</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
+    <script>
+        document.getElementById('search-student-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const studId = document.getElementById('studId').value;
+
+            fetch(`/search-student/${studId}`)
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                if (data.error) {
+                    resultDiv.innerText = data.error;
+                } else {
+                    resultDiv.innerHTML = `
+                        <h4>Student Found</h4>
+                        <p><strong>ID:</strong> ${data.studId}</p>
+                        <p><strong>Name:</strong> ${data.name}</p>
+                        <p><strong>Marks:</strong> ${data.marks}</p>
+                    `;
+                }
+            })
+            .catch(err => {
+                document.getElementById('result').innerText = 'Error searching for student.';
+                console.error(err);
+            });
+        });
+    </script>
+</body>
+</html>

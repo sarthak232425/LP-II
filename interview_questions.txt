@@ -1,0 +1,92 @@
+Here are some basic interview questions and answers for the subjects covered in your project.
+
+### HTML (HyperText Markup Language)
+
+**Q1: What is HTML?**
+A1: HTML is the standard markup language for creating web pages and web applications. It describes the structure of a web page using a system of tags and attributes.
+
+**Q2: What are HTML tags?**
+A2: HTML tags are keywords surrounded by angle brackets like `<html>`. They are the building blocks of an HTML page and are used to define elements like headings, paragraphs, tables, and links. Most tags come in pairs, like `<p>` and `</p>`.
+
+**Q3: What is the difference between `<div>` and `<span>`?**
+A3: `<div>` is a block-level element, meaning it starts on a new line and takes up the full width available. It's used to group larger sections of content. `<span>` is an inline element, meaning it does not start on a new line and only takes up as much width as necessary. It's used to style or target a small piece of text within a larger block.
+
+**Q4: What is the purpose of the `alt` attribute in an `<img>` tag?**
+A4: The `alt` attribute provides alternative text for an image if it cannot be displayed. This is crucial for accessibility (screen readers for the visually impaired) and for SEO (Search Engine Optimization).
+
+---
+
+### CSS (Cascading Style Sheets)
+
+**Q1: What is CSS?**
+A1: CSS is a style sheet language used for describing the presentation of a document written in a markup language like HTML. It controls the colors, fonts, layout, and overall look of a web page.
+
+**Q2: What are the three ways to include CSS in a web page?**
+A2:
+1.  **Inline CSS:** Using the `style` attribute directly on an HTML element.
+2.  **Internal/Embedded CSS:** Placing CSS rules within a `<style>` tag in the `<head>` section of the HTML file.
+3.  **External CSS:** Linking to an external `.css` file using a `<link>` tag in the `<head>` section. This is the most common and recommended method.
+
+**Q3: What is the CSS Box Model?**
+A3: The CSS Box Model is a box that wraps around every HTML element. It consists of four parts: the content itself, padding (the space around the content), the border, and the margin (the space outside the border).
+
+**Q4: What is the difference between `id` and `class` selectors?**
+A4: An `id` is unique within a page and is used to select a single, specific element (e.g., `#header`). A `class` can be applied to multiple elements to give them the same styling (e.g., `.button`).
+
+---
+
+### JavaScript
+
+**Q1: What is JavaScript?**
+A1: JavaScript is a high-level, interpreted programming language that allows you to implement complex features on web pages. It enables interactive elements, animations, and dynamic content updates without needing to reload the page.
+
+**Q2: What is the difference between `==` and `===`?**
+A2: `==` is the "equal to" operator that performs type coercion, meaning it converts the operands to the same type before comparison (e.g., `5 == "5"` is true). `===` is the "strict equal to" operator that does not perform type coercion, so it checks for both value and type equality (e.g., `5 === "5"` is false).
+
+**Q3: What is AJAX?**
+A3: AJAX (Asynchronous JavaScript and XML) is a technique for creating fast and dynamic web pages. It allows a web page to update parts of its content by exchanging small amounts of data with the server "behind the scenes," without reloading the entire page.
+
+**Q4: What is an event listener in JavaScript?**
+A4: An event listener is a function that waits for a specific event (like a click, keypress, or mouseover) to occur on an HTML element. When the event happens, the function is executed. `element.addEventListener('click', function() { ... });` is a common example.
+
+---
+
+### Node.js & Express.js
+
+**Q1: What is Node.js?**
+A1: Node.js is a JavaScript runtime environment that allows you to run JavaScript code on the server-side, outside of a web browser. It's known for its non-blocking, event-driven architecture, which makes it efficient for building scalable network applications.
+
+**Q2: What is Express.js?**
+A2: Express.js is a minimal and flexible Node.js web application framework. It provides a robust set of features for building web and mobile applications, such as routing, middleware, and template engines, making server-side development much faster and easier.
+
+**Q3: What is middleware in Express?**
+A3: Middleware functions are functions that have access to the request object (`req`), the response object (`res`), and the `next` function in the application’s request-response cycle. They can execute code, make changes to the request and response objects, end the request-response cycle, or call the next middleware in the stack. Common uses include logging, authentication, and parsing request bodies.
+
+---
+
+### MongoDB
+
+**Q1: What is MongoDB?**
+A1: MongoDB is a popular NoSQL database that stores data in flexible, JSON-like documents. This means fields can vary from document to document and data structure can be changed over time. It is known for its scalability and flexibility.
+
+**Q2: What is a "document" in MongoDB?**
+A2: A document is the basic unit of data in MongoDB, roughly equivalent to a row in a relational database. It is a data structure composed of field and value pairs, similar to a JSON object.
+
+**Q3: What is a "collection" in MongoDB?**
+A3: A collection is a group of MongoDB documents. It is the equivalent of a table in a relational database. A collection exists within a single database and doesn't enforce a strict schema.
+
+---
+
+### Cloud Computing
+
+**Q1: What is Cloud Computing?**
+A1: Cloud computing is the delivery of computing services—including servers, storage, databases, networking, software, analytics, and intelligence—over the Internet ("the cloud") to offer faster innovation, flexible resources, and economies of scale.
+
+**Q2: What are the three main service models of cloud computing?**
+A2:
+1.  **Infrastructure as a Service (IaaS):** Provides virtualized computing resources over the internet (e.g., servers, storage, networking). The user manages the operating system and applications. (Example: Amazon Web Services EC2).
+2.  **Platform as a Service (PaaS):** Provides a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure. (Example: Heroku, Google App Engine).
+3.  **Software as a Service (SaaS):** Provides software applications over the internet, on a subscription basis. The cloud provider manages the infrastructure and platform. (Example: Google Workspace, Microsoft Office 365).
+
+**Q3: What are the benefits of cloud computing?**
+A3: Key benefits include cost savings (pay-as-you-go), scalability (easily scale up or down), performance (access to a global network of data centers), security, speed, and reliability.

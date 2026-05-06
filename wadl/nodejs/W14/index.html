@@ -1,0 +1,61 @@
+<!--
+W14: Write a program to display the marks of five students in a table format, fetched from a backend server.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Marks</h1>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody id="students-tbody">
+                <!-- Data will be populated here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/students')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.getElementById('students-tbody');
+                    tbody.innerHTML = ''; // Clear existing data
+                    data.forEach(student => {
+                        const row = `<tr>
+                            <td>${student.studId}</td>
+                            <td>${student.name}</td>
+                            <td>${student.marks}</td>
+                        </tr>`;
+                        tbody.innerHTML += row;
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching student data:', error);
+                    const tbody = document.getElementById('students-tbody');
+                    tbody.innerHTML = '<tr><td colspan="3" class="text-center">Error loading data. Is the server running?</td></tr>';
+                });
+        });
+    </script>
+</body>
+</html>

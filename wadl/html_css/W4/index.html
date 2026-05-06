@@ -1,0 +1,149 @@
+<!--
+W4: Develop a webpage for an online course listing using HTML and CSS, showcasing available courses and their details.
+*   Content: "Online Learning Hub - Courses".
+*   Welcome to Online Learning Hub: Introduction to online learning, benefits, and course offerings.
+*   Learning Paths: Step-by-step learning paths (e.g., 1. Beginner, 2. Intermediate, 3. Advanced).
+*   Course categories: (e.g., - AI & ML, - Data Science, - Web Development).
+*   Course table: Course Name, Instructor, Duration, Fee (INR).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Hub - Courses</title>
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef5f9;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            background: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .section {
+            padding: 30px 20px;
+            margin-top: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .section h2 {
+            color: #3498db;
+            border-bottom: 2px solid #bdc3c7;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        ol, ul {
+            padding-left: 20px;
+        }
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .course-table th, .course-table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .course-table th {
+            background-color: #3498db;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background: #2c3e50;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Learning Hub - Courses</h1>
+    </header>
+
+    <div class="container">
+        <section id="welcome" class="section">
+            <h2>Welcome to Online Learning Hub</h2>
+            <p>
+                Embark on your learning journey with us. We offer a wide range of courses taught by industry experts. Enjoy the flexibility of online learning and achieve your career goals.
+            </p>
+        </section>
+
+        <section id="learning-paths" class="section">
+            <h2>Learning Paths</h2>
+            <ol>
+                <li>Beginner</li>
+                <li>Intermediate</li>
+                <li>Advanced</li>
+            </ol>
+        </section>
+
+        <section id="course-categories" class="section">
+            <h2>Course Categories</h2>
+            <ul>
+                <li>AI & ML</li>
+                <li>Data Science</li>
+                <li>Web Development</li>
+            </ul>
+        </section>
+
+        <section id="courses" class="section">
+            <h2>Available Courses</h2>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Instructor</th>
+                        <th>Duration</th>
+                        <th>Fee (INR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Introduction to Python</td>
+                        <td>Jane Smith</td>
+                        <td>8 Weeks</td>
+                        <td>₹4,999</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced JavaScript</td>
+                        <td>John Doe</td>
+                        <td>12 Weeks</td>
+                        <td>₹7,999</td>
+                    </tr>
+                    <tr>
+                        <td>Machine Learning Foundations</td>
+                        <td>Emily White</td>
+                        <td>16 Weeks</td>
+                        <td>₹12,999</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Online Learning Hub. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+

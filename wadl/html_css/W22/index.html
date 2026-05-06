@@ -1,0 +1,94 @@
+<!--
+W22: Create a simple mobile website using jQuery Mobile for your college, Pune Institute of Computer Technology (PICT). Include static pages like: About Us, Courses Offered, Departments, and Contact Information. Use jQuery Mobile's navigation bar, collapsible content, and page transitions.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Mobile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>PICT Home</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" class="ui-btn-active ui-state-persist">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <h2>Welcome to PICT</h2>
+        <p>Pune Institute of Computer Technology, (or PICT) is a private unaided engineering college located in Dhankawadi, Pune, India.</p>
+        
+        <div data-role="collapsible">
+            <h3>Departments</h3>
+            <ul data-role="listview">
+                <li>Computer Engineering</li>
+                <li>Information Technology</li>
+                <li>Electronics & Telecommunication</li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="footer">
+        <h4>&copy; 2026 PICT</h4>
+    </div>
+</div>
+
+<!-- About Us Page -->
+<div data-role="page" id="about">
+    <div data-role="header">
+        <h1>About Us</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>Information about the history and mission of PICT.</p>
+        <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Back to Home</a>
+    </div>
+    <div data-role="footer">
+        <h4>&copy; 2026 PICT</h4>
+    </div>
+</div>
+
+<!-- Courses Page -->
+<div data-role="page" id="courses">
+    <div data-role="header">
+        <h1>Courses Offered</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>Details about the various undergraduate and postgraduate courses available at PICT.</p>
+        <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Back to Home</a>
+    </div>
+    <div data-role="footer">
+        <h4>&copy; 2026 PICT</h4>
+    </div>
+</div>
+
+<!-- Contact Page -->
+<div data-role="page" id="contact">
+    <div data-role="header">
+        <h1>Contact Information</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>Address: Sr. No. 27, Pune-Satara Road, Dhankawadi, Pune, Maharashtra - 411043</p>
+        <p>Phone: (123) 456-7890</p>
+        <a href="#home" data-transition="slide" data-direction="reverse" class="ui-btn">Back to Home</a>
+    </div>
+    <div data-role="footer">
+        <h4>&copy; 2026 PICT</h4>
+    </div>
+</div>
+
+</body>
+</html>
+
+
